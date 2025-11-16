@@ -1,16 +1,17 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Eye, EyeOff } from 'lucide-react'
-import { Input } from './input'
-import { Button } from './button'
+import { useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
+import { Input } from "./input";
+import { Button } from "./button";
 
-interface PasswordInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label?: string
+interface PasswordInputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  label?: string;
 }
 
 export function PasswordInput({ label, ...props }: PasswordInputProps) {
-  const [showPassword, setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className="w-full">
@@ -21,7 +22,7 @@ export function PasswordInput({ label, ...props }: PasswordInputProps) {
       )}
       <div className="relative flex items-center">
         <Input
-          type={showPassword ? 'text' : 'password'}
+          type={showPassword ? "text" : "password"}
           {...props}
           className="pr-10"
         />
@@ -40,5 +41,5 @@ export function PasswordInput({ label, ...props }: PasswordInputProps) {
         </Button>
       </div>
     </div>
-  )
+  );
 }
